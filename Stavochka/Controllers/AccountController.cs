@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Stavochka.Models;
+using System.Net.Mail;
+
 
 namespace Stavochka.Controllers
 {
@@ -68,9 +70,18 @@ namespace Stavochka.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(model);
+                var user = await UserManager.FindByEmailAsync(model.Email);
+                if (user != null)
+                {
+                    // проверяем, подтвержден ли email
+                    if (!await UserManager.IsEmailConfirmedAsync(user.Id))
+                    {
+                        ModelState.AddModelError(string.Empty, "Вы не подтвердили свой email");
+                        return View(model);
+                    }
+                }
             }
 
             // This doesn't count login failures towards account lockout
@@ -155,15 +166,26 @@ namespace Stavochka.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    var userId = UserManager.FindByEmail(user.Email).Id;
+                    UserManager.AddToRole(userId, "User");
+
+
+
+                   // await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(userId);
+                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = userId, code = code }, protocol: Request.Url.Scheme);
 
-                    return RedirectToAction("Index", "Home");
+                    EmailSender emailService = new EmailSender();
+                    await emailService.SendEmailAsync(model.Email, "Confirm your account",
+                        $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>link</a>");
+                    // await UserManager.SendEmailAsync(userId, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+
+                    return Content("Для завершения регистрации проверьте электронную почту и перейдите по ссылке, указанной в письме");
+                    //return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }

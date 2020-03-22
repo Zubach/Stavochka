@@ -1,9 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
+﻿/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -20,5 +15,68 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 300px;
 }
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    /* font:normal 75% Arial, Helvetica, sans-serif;  */
+    font-family: 'Roboto', sans-serif;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#register-box {
+    position: absolute;
+    top: 20%;
+    left: 34.375%;
+    border-radius: 1px;
+    padding: 20px;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+}
+
+    #register-box div {
+        display: inline;
+        float: left;
+    }
+
+.reg-box-list {
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    list-style-type: none;
+}
+
+    .reg-box-list li {
+        display: block;
+        height: 67px;
+    }
+
+.buttons-box {
+    margin-left: 48px;
+    
+}
+
+    .buttons-box button {
+        margin: 5px;
+    }
