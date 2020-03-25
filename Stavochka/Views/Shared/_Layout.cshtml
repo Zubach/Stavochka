@@ -6,34 +6,63 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body id="particles-js">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+    @if (Request.IsAuthenticated)
+    {
+    <header>
+        <div class="header-top-box">
+            <div class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar navbar-nav navbar-right header-top-list">
+                            <li>
+                                <a href="#"><i class="fa fa-user"></i> Личный кабинет</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="header-bottom-box">
+            <div class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">             
+                    <ul class="nav navbar navbar-nav header-bottom-list">
+                        <li>
+                            <a href="#">Прогнозы</a>
+                        </li>
+                        <li>
+                            <a href="#">Эксперты</a>
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    }
+
     <div class="container body-content">
         @RenderBody()
        
