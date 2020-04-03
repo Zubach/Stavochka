@@ -31,7 +31,7 @@ namespace Stavochka
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/materialdesign.css",
-                      "~/Content/site.css"));
+                      "~/Content/style.css"));
         }
     }
 }

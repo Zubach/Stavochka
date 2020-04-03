@@ -204,7 +204,13 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Icons\crown.svg" />
+    <Content Include="Icons\instagram.svg" />
+    <Content Include="Icons\telegram.svg" />
+    <Content Include="Icons\why-1.png" />
+    <Content Include="Icons\why-2.png" />
+    <Content Include="Icons\why-3.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -255,6 +261,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\VIPPrognoz.cshtml" />
+    <Content Include="Views\Home\Prognoz.cshtml" />
+    <Content Include="Views\Home\Experts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

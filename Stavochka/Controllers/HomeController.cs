@@ -26,5 +26,22 @@ namespace Stavochka.Controllers
 
             return View();
         }
+
+        public ActionResult VIPPrognoz()
+        {
+
+            return View();
+        }
+        public ActionResult Prognoz()
+        {
+
+            return View();
+        }
+
+        public ActionResult Experts()
+        {
+
+            return View();
+        }
     }
 }

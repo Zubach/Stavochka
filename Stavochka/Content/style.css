@@ -1,0 +1,527 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 300px;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    /* font:normal 75% Arial, Helvetica, sans-serif;  */
+    font-family: 'Roboto', sans-serif;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#register-box  {
+    position: absolute;
+    top: 20%;
+    left: 34.375%;
+    border-radius: 1px;
+    padding: 20px;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+}
+
+#login-box {
+    position: absolute;
+    top: 20%;
+    left: 34.375%;
+    border-radius: 1px;
+    padding: 20px;
+    width: 500px;
+    height: 320px;
+    background-color: white;
+}
+
+    #register-box div {
+        display: inline;
+        float: left;
+    }
+
+#login-box div {
+    display: inline;
+    float: left;
+}
+
+
+
+
+#login-box .btnflip {
+    top: 77% !important;
+}
+
+
+.reg-box-list {
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    list-style-type: none;
+}
+
+    .reg-box-list li {
+        display: block;
+        height: 67px;
+    }
+
+.buttons-box {
+    margin-left: 48px;
+    
+}
+
+    .buttons-box button {
+        margin: 5px;
+    }
+
+
+
+    .btnflip {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 45px;
+  text-align: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform-origin: center center;
+}
+.btnflip-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 45px;
+  font-size: 21px;
+  background-color: rgba(255,255,255, .05);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: 1s;
+}
+.btnflip-item.btnflip__front {
+  transform: rotateX(0deg) translateZ(20px);
+}
+.btnflip:hover .btnflip-item.btnflip__front {
+  transform: rotateX(-180deg) translateZ(20px);
+}
+.btnflip-item.btnflip__back {
+  transform: rotateX(180deg) translateZ(20px);
+}
+.btnflip:hover .btnflip-item.btnflip__back {
+  transform: rotateX(0deg) translateZ(20px);
+}
+.btnflip-item.btnflip__center {
+  background: linear-gradient(to left, #c31a5b, #7129bd);
+}
+.btnflip-item.btnflip__center::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #ffdd1f, #c31a5b);
+  border-radius: 30px;
+  transform: translateZ(-1px);
+}
+.btnflip:hover .btnflip-item.btnflip__center {
+  transform: rotateX(-180deg);
+}
+
+
+/*header*/
+
+header > div{
+    min-height: 50px;
+}
+
+.header-bottom-box > div, .header-top-box > div {
+    margin:0px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.header-bottom-box>div,.header-top-box>div{
+    background-color:white;
+   
+}
+.header-top-box {
+    border-bottom: 1px solid rgb(226, 236, 243);
+}
+
+.header-top-list li, header-bottom-list li {
+    border-left: 1px solid rgb(226, 236, 243);
+    border-right: 1px solid rgb(226, 236, 243);
+}
+.header-top-list > li > a, .header-bottom-list > li > a {
+    color: #1D3755 !important;
+}
+    a {
+        color: #1D3755;
+    }
+    .header-top-list li:hover {
+        background-color: rgb(241, 246, 251);
+    }
+
+.header-bottom-list > li>a:hover {
+    color: #276FB9 !important; 
+}
+
+
+.golden{
+    padding: 10px;
+}
+
+.header-bottom-list > .golden > a {
+    font-weight:800;
+    padding: 5px;
+    color: #F1D15B !important;
+    border-radius:3px;
+    -webkit-box-shadow: 0px 0px 4px 4px rgba(219,222,44,1);
+    -moz-box-shadow: 0px 0px 4px 4px rgba(219,222,44,1);
+    box-shadow: 0px 0px 4px 4px rgba(219,222,44,1);
+}
+    .header-bottom-list > .golden > a:hover {
+        color: #F1D15B !important;
+    }
+
+
+.prognozBox {
+    position:absolute;
+    margin-top: 3rem;
+    padding: 5px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    background-color: rgb(213, 213, 213);
+
+
+}
+
+
+.tab-content > .active {
+    display: block;
+}
+
+.tab-content > .tab-pane {
+    display: none;
+}
+
+.fade {
+    transition: opacity .15s linear;
+}
+
+.prognozCard {
+    margin-top:2rem !important;
+    
+    padding: 0 1rem;
+    outline: 0 !important;
+
+  
+}
+
+
+
+.card {
+    background: #FFFFFF;
+    box-shadow: 0 13px 38px 0 rgba(30,57,118,0.14);
+    border-radius: 6px;
+    border: none;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    color: inherit;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.prognoz-product-card .card-header .priceOld {
+    width: 100%;
+    color: #ACAEB3;
+    text-decoration: line-through;
+    padding-bottom: 0.75rem;
+    display: block;
+    font-size: 1.65rem;
+}
+
+    .phide{
+        visibility:hidden !important;
+        
+    }
+
+    .prognoz-product-card .card-header .price {
+        width: 100%;
+        color: #792188;
+        font-weight: 700;
+        display: block;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+.prognoz-product-card .card-header .badge {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    position: absolute;
+    left: -0.5rem;
+}
+
+.prognoz-product-card .card-header .title {
+    color: #2F266F;
+    font-weight: 800;
+    font-size: 18pt;
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+
+.prognoz-product-card .card-header .vip-title {
+    font-weight: 800;
+    font-size: 18pt;
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    background: linear-gradient(0deg, #FEC802 14%, #FEA602 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0B2349;
+}
+
+.badge-yellow {
+    background-color: #FEC802;
+}
+
+.badge {
+    color: #FFF;
+    font-size: 1rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+    font-size: 100%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    
+}
+
+.prognoz-product-card .card-body ul {
+    color: #2F266F;
+    padding-left: 0px;
+}
+
+    .prognoz-product-card .card-body ul li:first-child {
+        border-top: none;
+    }
+
+    .prognoz-product-card .card-body ul li {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: block;
+        border-top: solid thin #E7E7E7;
+        list-style-type: none;
+    }
+
+
+.prognoz-product-card .card-footer {
+    background-color: transparent;
+    border: none;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+    .prognoz-product-card .card-footer .btn {
+        font-weight:800;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .prognoz-product-card .card-footer .noRegBuy:hover {
+        color: white !important;
+        background-image:none;
+        background-color: #863F93 !important;
+    }
+
+
+.btn-yellow {
+    border: none;
+    background-color: #FEA602;
+    background-image: linear-gradient(0deg, #FEC802 14%, #FEA602 100%);
+    color: #FFF;
+    box-shadow: none;
+    padding-top: 0.815rem;
+    padding-bottom: 0.815rem;
+    transition: background-image .15s ease-in-out;
+}
+
+.info {
+    position: relative;
+    margin: 0 0 40px;
+    padding: 27px 0 3px;
+    background: #F6F9FD;
+}
+
+.info__title {
+    margin: 0 0 28px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #295894;
+    text-align: center;
+}
+
+
+.info ul > li {
+    position: relative;
+    padding: 0 0 0 17px;
+    list-style: none;
+}
+
+.info li {
+    margin: 0 0 20px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+.info li {
+    margin: 0 0 17px;
+    padding: 0 0 0 17px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALCAYAAACzkJeoAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHNJREFUeNpiXLr1aBMDA0MDEP9jQANMQFwLxNuBWBSbJAi4AfFZILbAJgkCskB8CIhzsEmCACsQTwbi5UDMw8KAHUQAMQcTDsmVQByLLvkbiPOgOr8gG/sEiEOB+AS6g3YDsRGyBEyyGYg9gfg1usUAAQYAfLUS6y1gFGAAAAAASUVORK5CYII=') no-repeat 0 7px;
+    list-style: none;
+}
+
+.big-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info-container{
+    position:absolute;
+    background-color:white;
+    padding:10px;
+    border-radius:2px;
+}
+
+
+.why {
+    display:flex;
+    margin: 0 0 25px;
+    padding: 22px 0 33px;
+    background: #F6F9FD;
+}
+.wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+}
+.why__title {
+    margin: 0 0 23px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #295894;
+    text-align: center;
+}
+.why ul {
+    margin: 0 -30px 0 0;
+}
+
+.why li {
+    float: left;
+    width: 33.33%;
+    padding: 0 30px 0 100px;
+    list-style: none;
+    font-size: 15px;
+    line-height: 24px;
+    color: #647284;
+}
+
+.why__item-1 {
+    min-height: 71px;
+    background: url('/Icons/why-1.png') no-repeat 8px 7px;
+}
+
+.why__item-2 {
+    min-height: 69px;
+    background: url('/Icons/why-2.png') no-repeat 3px 5px;
+}
+.why__item-3 {
+    min-height: 69px;
+    background: url('/Icons/why-3.png') no-repeat 3px 5px;
+}
